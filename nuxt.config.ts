@@ -4,11 +4,13 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'cloudflare-pages',
   },
-
   modules: [
     // dev: 500 __nuxt_vite_node__/manifest
     process.env.NODE_ENV === 'development' ? null : 'nitro-cloudflare-dev',
     '@unocss/nuxt',
   ],
   devtools: { enabled: true },
+  experimental: {
+    writeEarlyHints: true,
+  },
 })
